@@ -1,28 +1,51 @@
-import ExpenseItem from './component/ExpensesItem';
+// import ExpenseItems from "./components/ExpenseItems";when we use maps
+// import React from 'react'; if we write code in react object
+import Expenses from "./components/ExpenseList/Expenses";
 
-function App() {
-  const Expenses = [
-    { date: new Date(2023, 5, 24), title: 'Food', amount: 200, location: 'Pune' },
-    { date: new Date(2023, 5, 25), title: 'Movie', amount: 300, location: 'Mumbai' },
-    { date: new Date(2023, 5, 26), title: 'Petrol', amount: 500, location: 'Goa' }
+const App = () => {
+  const expensesData = [
+    {
+      id: "el",
+      name: "Food",
+      amount: 500,
+      date: new Date(2022, 7, 15),
+      LocationOfExpenditure: "Mumbai ",
+    },
+    {
+      id: "bl",
+      name: "Shopping",
+      amount: 5000,
+      date: new Date(2022, 10, 12),
+      LocationOfExpenditure: "Pune",
+    },
+    {
+      id: "ml",
+      name: "Movie",
+      amount: 1000,
+      date: new Date(2022, 6, 13),
+      LocationOfExpenditure: "Imax Nasik",
+    },
+    {
+      id: "cl",
+      name: "Tour",
+      amount: 20000,
+      date: new Date(2022, 4, 12),
+      LocationOfExpenditure: "Gao trip",
+    },
+    
   ];
-  
-  const expenseItems = Expenses.map((expense, index) => (
-    <ExpenseItem
-      key={index}
-      date={expense.date}
-      title={expense.title}
-      amount={expense.amount}
-      location={expense.location}
-    />
-  ));
-
+  const style={color:'#40005d',textAlign:'center'}
   return (
     <div>
-      {expenseItems}
+      <h2 style={style}>Expense Items Details</h2>
+      {/* {expenses.map((any) => (
+        <ExpenseItems data={any}></ExpenseItems>
+      ))} */}
+      <Expenses expenses={expensesData} />
+      {/* return React.createElement('div',{},
+  React.createElement(Expenses,{items:expenses})); react object code */}
     </div>
   );
 }
 
 export default App;
-

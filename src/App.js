@@ -6,7 +6,7 @@ function App() {
     { date: new Date(2023, 5, 25), title: 'Movie', amount: 300, location: 'Mumbai' },
     { date: new Date(2023, 5, 26), title: 'Petrol', amount: 500, location: 'Goa' }
   ];
-
+  
   const expenseItems = Expenses.map((expense, index) => (
     <ExpenseItem
       key={index}

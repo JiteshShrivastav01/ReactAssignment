@@ -16,6 +16,19 @@ const ExpenseItems = (props) => {
     console.log(amount)
   }
 
+  /* const [name , setName] = useState(props.name)
+  const updateName = () => {
+    setName('Boating')
+    console.log(name)
+  }
+
+  const [date , setDate] = useState(props.date)
+  const updateDate = () => {
+    setDate('new Date(2023,05,31)')
+    console.log(date)
+  }
+  */
+
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date}></ExpenseDate>
@@ -27,6 +40,9 @@ const ExpenseItems = (props) => {
         ></ExpenseDetails>
       </div>
       <button onClick={updateAmount} style={btnStyle}>Update Expense</button>
+      {/*
+      <button onClick={updateName} style={btnStyle}>Update Name</button>
+  <button onClick={updateDate} style={btnStyle}>Update Date </button> */}
     </Card>
   );
 }

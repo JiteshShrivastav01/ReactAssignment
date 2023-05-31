@@ -1,6 +1,6 @@
-// import ExpenseItems from "./components/ExpenseItems";when we use maps
-// import React from 'react'; if we write code in react object
 import Expenses from "./components/ExpenseList/Expenses";
+
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
   const expensesData = [
@@ -9,14 +9,14 @@ const App = () => {
       name: "Food",
       amount: 500,
       date: new Date(2022, 7, 15),
-      LocationOfExpenditure: "Mumbai ",
+      LocationOfExpenditure: "Restaurent dhule",
     },
     {
       id: "bl",
       name: "Shopping",
       amount: 5000,
       date: new Date(2022, 10, 12),
-      LocationOfExpenditure: "Pune",
+      LocationOfExpenditure: "Trends",
     },
     {
       id: "ml",
@@ -30,14 +30,21 @@ const App = () => {
       name: "Tour",
       amount: 20000,
       date: new Date(2022, 4, 12),
-      LocationOfExpenditure: "Gao trip",
+      LocationOfExpenditure: "gao trip",
     },
-    
+    {
+      id: "dl",
+      name: "voccation",
+      amount: 30000,
+      date: new Date(2022, 6, 12),
+      LocationOfExpenditure: "Germany",
+    },
   ];
-  const style={color:'#40005d',textAlign:'center'}
+
   return (
     <div>
-      <h2 style={style}>Expense Items Details</h2>
+      <NewExpense />
+
       {/* {expenses.map((any) => (
         <ExpenseItems data={any}></ExpenseItems>
       ))} */}

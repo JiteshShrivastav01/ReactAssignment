@@ -3,7 +3,7 @@ import ExpenseDate from "./ExpenseDate";
 import ExpenseDetails from "./ExpenseDetails";
 import Card from "../UI/Card";
 
-import react, {useState} from 'react';
+import React, {useState} from 'react';
 
 const ExpenseItems = (props) => {
 

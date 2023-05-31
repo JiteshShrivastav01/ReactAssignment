@@ -4,8 +4,11 @@ import ExpenseDetails from "./ExpenseDetails";
 import Card from "../UI/Card";
 
 const ExpenseItems = (props) => {
-  const ChangeTitle=()=>{
-    console.log('Clicked !')
+  const deleteExpense = (e) => {
+
+    let item = e.target.parentElement;
+    item.remove()
+
   }
   return (
     <Card className="expense-item">
@@ -17,7 +20,7 @@ const ExpenseItems = (props) => {
           LocationOfExpenditure={props.LocationOfExpenditure}
         ></ExpenseDetails>
       </div>
-      <button onClick={ChangeTitle}>Change Title</button>
+      <button onClick={deleteExpense}>Delete Expense</button>
     </Card>
   );
 }

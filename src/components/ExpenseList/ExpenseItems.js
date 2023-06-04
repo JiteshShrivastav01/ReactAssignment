@@ -1,9 +1,8 @@
-
 import "./ExpenseItems.css";
 import ExpenseDate from "./ExpenseDate";
 import ExpenseDetails from "./ExpenseDetails";
 import Card from "../UI/Card";
-import { useState } from "react";
+//import { useState } from "react";
 
 const ExpenseItems = (props) => {
 
@@ -13,30 +12,31 @@ const ExpenseItems = (props) => {
     item.remove() 
 
   }
+
+  // const [name, setTitle] = useState(props.name)
+  // const [amount , setAmount] = useState(props.amount)
+
+  // const editButton = (e) =>{
+  //   setTitle("Updated!")
+  //   setAmount("100$")
+  // 
+
   const style={fontWeight: 'bold',color: 'white',backgroundColor: '#40005d',border: '1px solid white',padding: '5px 15px',borderRadius: '12px',margin:'10px',}
-
-  const [name, setTitle] = useState(props.name)
-  const [amount , setAmount] = useState(props.amount)
-
-  const editButton = (e) =>{
-    setTitle("Updated!")
-    setAmount("100$")
-  }
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date}></ExpenseDate>
       <div className="expense-item__description">
-        <h2>{name}</h2>
+        <h2>{props.title}</h2>
         <ExpenseDetails
           
           LocationOfExpenditure={props.LocationOfExpenditure}
-          amount={amount}
+          amount={props.amount}
         >   
         </ExpenseDetails>
       </div>
 
-      <button onClick={deleteButton} style={style} >Delete <br/>Expense</button>
-      <button onClick={editButton} style={style}> Edit <br/> Expense</button>
+      <button onClick={deleteButton} style={style} >Delete <br/> Expense</button>
+      {/* <button onClick={editButton} > Edit Expense</button> */}
     </Card>
   );
 }

@@ -1,3 +1,5 @@
+
+import { useState } from "react";
 import Expenses from "./components/ExpenseList/Expenses";
 
 import NewExpense from "./components/NewExpense/NewExpense";
@@ -6,49 +8,45 @@ const App = () => {
   const expensesData = [
     {
       id: "el",
-      name: "Food",
+      title: "Food",
       amount: 500,
-      date: new Date(2022, 7, 15),
-      LocationOfExpenditure: "Mumbai",
+      date: new Date(2023, 5, 15),
     },
     {
       id: "bl",
-      name: "Shopping",
+      title: "Shopping",
       amount: 5000,
-      date: new Date(2022, 10, 12),
-      LocationOfExpenditure: "Pune",
+      date: new Date(2023, 5, 22),
     },
     {
       id: "ml",
-      name: "Movie",
+      title: "Movie",
       amount: 1000,
-      date: new Date(2022, 6, 13),
-      LocationOfExpenditure: "Nasik",
+      date: new Date(2023, 5, 13),
     },
     {
       id: "cl",
-      name: "Tour",
+      title: "Tour",
       amount: 20000,
-      date: new Date(2022, 4, 12),
-      LocationOfExpenditure: "Goa",
-    },
-    {
-      id: "dl",
-      name: "voccation",
-      amount: 30000,
-      date: new Date(2022, 6, 12),
-      LocationOfExpenditure: "Delhi",
-    },
+      date: new Date(2022, 5, 12),  
+    }
+    
   ];
+  
+  const [expenseList , setExpenseList] = useState(expensesData)
+  const addExpenseHandler = (newExpense) =>{
+    setExpenseList([...expenseList ,newExpense]);
+    console.log(newExpense,"in app.js new expenses");
+  }
 
   return (
     <div>
-      <NewExpense />
-
+      <NewExpense onAddExpense = {addExpenseHandler} />
+     
       {/* {expenses.map((any) => (
         <ExpenseItems data={any}></ExpenseItems>
       ))} */}
-      <Expenses expenses={expensesData} />
+      <Expenses expenses={expenseList} />
       {/* return React.createElement('div',{},
   React.createElement(Expenses,{items:expenses})); react object code */}
     </div>
